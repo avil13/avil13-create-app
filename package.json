@@ -1,10 +1,11 @@
 {
   "name": "@avil13/create-app",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Simple way for creating node app",
   "main": "dist/index.js",
   "types": "dist",
   "license": "MIT",
+  "type": "commonjs",
   "author": {
     "name": "avil13",
     "url": "https://github.com/avil13"
@@ -17,7 +18,6 @@
     "src"
   ],
   "scripts": {
-    "start": "npm run build && node dist/index.js",
     "dev": "ts-node --project tsconfig.json src/index.ts",
     "dev:watch": "nodemon",
     "lint:fix": "eslint --fix --ext .js,.ts .",
@@ -39,12 +39,6 @@
     "*.ts": [
       "eslint --fix --ext .js,.ts"
     ]
-  },
-  "engines": {
-    "node": ">=10",
-    "npm": ">=6.8.0",
-    "git": ">=2.11.0",
-    "yarn": ">=1.7.0"
   },
   "dependencies": {
     "chalk": "^4.1.0",
