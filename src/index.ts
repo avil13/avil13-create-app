@@ -10,7 +10,7 @@ const run = async () => {
 
   const template: ITemplate = await getTemplate();
 
-  cloneTemplate(initDto.projectAbsolutePath, template);
+  cloneTemplate(initDto.projectAbsolutePathEscaped, template);
 
   renameTitleNames(initDto.projectAbsolutePath, templateTitleName, initDto.projectName);
 

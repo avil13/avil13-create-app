@@ -28,6 +28,10 @@ export class InitDTO {
     this.projectName = toKebabCase(path.basename(targetDir));
     this.projectAbsolutePath = path.join(this.rootDir, this.targetDir);
   }
+
+  get projectAbsolutePathEscaped(): string {
+    return this.projectAbsolutePath.replace(/(\s+)/g, '\\$1');
+  }
 }
 
 export enum ProjectVars {
