@@ -38,7 +38,7 @@ export enum ProjectVars {
 export const TEMPLATES: ITemplate[] = [
   {
     name: '[ts] simple app',
-    exec: `git clone git@github.com:avil13/template-ts-package.git --depth=1 ${ProjectVars.name}`,
+    exec: `git clone git@github.com:avil13/template-ts-package.git --branch=feat/single --depth=1 ${ProjectVars.name}`,
     color: 'cyan',
   },
   {

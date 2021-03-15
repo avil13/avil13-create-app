@@ -1,6 +1,6 @@
 {
   "name": "@avil13/create-app",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Simple way for creating node app",
   "main": "dist/index.js",
   "types": "dist",
@@ -25,7 +25,8 @@
     "test:watch": "jest --watch",
     "type-check": "tsc -p . --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build": "rm -rf ./dist && tsc -p ./tsconfig.prod.json"
+    "build": "rm -rf ./dist && tsc -p ./tsconfig.prod.json",
+    "prepublishOnly": "yarn build"
   },
   "husky": {
     "hooks": {
@@ -48,13 +49,11 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "enquirer": "^2.3.6",
-    "minimist": "^1.2.5",
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
     "@babel/core": "7",
     "@types/jest": "^26.0.20",
-    "@types/minimist": "^1.2.1",
     "@types/node": "^14.14.33",
     "@types/shelljs": "^0.8.8",
     "@typescript-eslint/eslint-plugin": "^4.17.0",

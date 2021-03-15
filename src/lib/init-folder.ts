@@ -1,32 +1,25 @@
 import { prompt } from 'enquirer';
 import fs from 'fs';
-import minimist from 'minimist';
 import { InitDTO, ProjectVars } from '../contracts';
 import { log } from '../utils/log';
-
-const argv = minimist(process.argv.slice(2));
 
 /**
  *
  * @param pathToCurrentDir
  */
 export const initFolder = async (pathToCurrentDir: string): Promise<InitDTO> => {
-  let targetDir = argv._[0];
+  const { name } = await prompt<{ name: string }>({
+    type: 'input',
+    name: 'name',
+    message: 'Project name:',
+    initial: ProjectVars.defaultProjectName,
+  });
 
-  if (!targetDir) {
-    const { name } = await prompt<{ name: string }>({
-      type: 'input',
-      name: 'name',
-      message: 'Project name:',
-      initial: ProjectVars.defaultProjectName,
-    });
-
-    if (!name || `${name}`.trim() === '') {
-      throw new Error('Not valid "name"');
-    }
-
-    targetDir = name;
+  if (!name || `${name}`.trim() === '') {
+    throw new Error('Not valid "name"');
   }
+
+  const targetDir = name;
 
   const initDto = new InitDTO({
     rootDir: pathToCurrentDir,
