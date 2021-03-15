@@ -1,6 +1,6 @@
 {
   "name": "@avil13/create-app",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Simple way for creating node app",
   "main": "dist/index.js",
   "types": "dist",
@@ -10,7 +10,7 @@
     "url": "https://github.com/avil13"
   },
   "bin": {
-    "create-app": "./bin/create-app"
+    "create-app": "dist/index.js"
   },
   "files": [
     "dist",

@@ -8,6 +8,8 @@ import { log } from '../utils/log';
  * @param pathToCurrentDir
  */
 export const initFolder = async (pathToCurrentDir: string): Promise<InitDTO> => {
+  console.log(''); // empty string
+
   const { name } = await prompt<{ name: string }>({
     type: 'input',
     name: 'name',
