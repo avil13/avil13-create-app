@@ -3,14 +3,7 @@ import enquirer from 'enquirer';
 import { ITemplate, TEMPLATES } from '../contracts';
 
 export const getTemplate = async (): Promise<ITemplate> => {
-  const availableTemplates: string[] = TEMPLATES.map((t) => {
-    const fn = chalk[t.color];
-    if (typeof fn === 'function') {
-      // @ts-ignore
-      return fn(t.name);
-    }
-    return t.name;
-  });
+  const availableTemplates: string[] = TEMPLATES.map((t) => t.name);
 
   const message = 'Select a template:';
 

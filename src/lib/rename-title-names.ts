@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { FILES } from '../contracts';
 
-const renameStringInFile = (filePath: string, oldTitle: string, newTitle: string) => {
+export const renameStringInFile = (filePath: string, oldTitle: string, newTitle: string) => {
   const content = fs.readFileSync(filePath, 'utf-8');
   const strings = content.split('\n');
   const reg = new RegExp(oldTitle, 'gi');
@@ -17,6 +17,9 @@ const renameStringInFile = (filePath: string, oldTitle: string, newTitle: string
  */
 export const renameTitleNames = (dirPath: string, oldTitle: string, newTitle: string) => {
   FILES.forEach((file) => {
-    renameStringInFile(path.join(dirPath, file), oldTitle, newTitle);
+    const filePath = path.join(dirPath, file);
+    const text = renameStringInFile(filePath, oldTitle, newTitle);
+
+    fs.writeFileSync(filePath, text);
   });
 };
