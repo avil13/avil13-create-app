@@ -1,6 +1,6 @@
 {
   "name": "@avil13/create-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple way for creating node app",
   "main": "dist/index.js",
   "types": "dist",
@@ -8,6 +8,10 @@
   "author": {
     "name": "avil13",
     "url": "https://github.com/avil13"
+  },
+  "bin": {
+    "create-app": "dist/index.js",
+    "cva": "dist/index.js"
   },
   "files": [
     "dist",
