@@ -1,5 +1,5 @@
 {
-  "name": "template-ts-package",
+  "name": "@avil13/create-app",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -28,11 +28,18 @@
       "eslint --fix --ext .js,.ts"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "enquirer": "^2.3.6",
+    "minimist": "^1.2.5",
+    "shelljs": "^0.8.4"
+  },
   "devDependencies": {
     "@babel/core": "7",
     "@types/jest": "^26.0.20",
+    "@types/minimist": "^1.2.1",
     "@types/node": "^14.14.33",
+    "@types/shelljs": "^0.8.8",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "babel-jest": "^26.6.3",
     "dotenv": "^8.2.0",
